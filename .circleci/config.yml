@@ -9,7 +9,9 @@ jobs:
   steps:
       - checkout
       - git clone git@github.com:viessmann/ci-automation-scripts.git
-      - run: azcopy --source /usr/bin/  --destination https://dfcommonsa.blob.core.windows.net/adfspark/pyFiles --dest-key 'DWBAxR9rK2fFcV5c+4rFZ5LxNfSgz6ausPoiM5Zzm2p/v9MxVBsIstrEzNKFIT4iW6ovfmNtHEtQWCEOru9bBQ==' --recursive  --quiet
+      - run: 
+        command: 
+          - azcopy --source /usr/bin/  --destination https://dfcommonsa.blob.core.windows.net/adfspark/pyFiles --dest-key 'DWBAxR9rK2fFcV5c+4rFZ5LxNfSgz6ausPoiM5Zzm2p/v9MxVBsIstrEzNKFIT4iW6ovfmNtHEtQWCEOru9bBQ==' --recursive  --quiet
 
 
 
