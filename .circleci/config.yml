@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+  - add_ssh_keys:
+    fingerprints:
+      - "77:54:f1:5b:e5:ad:88:4b:0f:19:55:e8:28:21:fe:26"
+  docker:
+    - image:  farmer1992/azcopy:linux-latest
+  steps:
+      - checkout
+      - git clone git@github.com:viessmann/ci-automation-scripts.git
+      - run: azcopy --source /usr/bin/  --destination https://dfcommonsa.blob.core.windows.net/adfspark/pyFiles --dest-key 'DWBAxR9rK2fFcV5c+4rFZ5LxNfSgz6ausPoiM5Zzm2p/v9MxVBsIstrEzNKFIT4iW6ovfmNtHEtQWCEOru9bBQ==' --recursive  --quiet
+
+
+
